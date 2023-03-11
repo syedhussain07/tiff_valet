@@ -159,7 +159,14 @@ class _customer_food_delivery_trackingState extends State<customer_food_delivery
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0),topRight: Radius.circular(20)),
-                  color: Color(0xfff5f5f5),
+                  color:Colors.blue,
+
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+
+                  ),
                 ),
 
 
