@@ -93,41 +93,39 @@ class _not_deliverableState extends State<not_deliverable> {
 
 
 
-            Spacer(flex:5 ,),
+           Expanded(child: SizedBox()),
 
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20.0, right: 20, bottom: 50),
-                child: MaterialButton(
-                    onPressed: () {
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20, bottom: 50),
+              child: MaterialButton(
+                  onPressed: () {
 
-                       },
-                    padding: const EdgeInsets.only(right: 0.0),
-                    child: Ink(
-                      decoration: const BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            Color(0xFF8639B1),
-                            Color(0xFFEB2133),
-                            Color(0xFFFD9E41)
-                          ],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                     },
+                  padding: const EdgeInsets.only(right: 0.0),
+                  child: Ink(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Color(0xFF8639B1),
+                          Color(0xFFEB2133),
+                          Color(0xFFFD9E41)
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
                       ),
-                      child: Container(
-                        height: 30,
-                          constraints: const BoxConstraints(
-                              minWidth: 60.0,
-                              minHeight: 60.0), // min sizes for Material buttons
-                          alignment: Alignment.center,
-                          child: Text(
-                            'Set your delivery location',
-                            style: TextStyle(color: Colors.white),
-                          )),
-                    )),
-              ),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                    child: Container(
+                      height: 30,
+                        constraints: const BoxConstraints(
+                            minWidth: 60.0,
+                            minHeight: 60.0), // min sizes for Material buttons
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Set your delivery location',
+                          style: TextStyle(color: Colors.white),
+                        )),
+                  )),
             ),
 
 
