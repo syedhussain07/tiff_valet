@@ -74,6 +74,8 @@ class _home_screenState extends State<home_screen> {
     1234567999
   ];
 
+  List<String> customer_address=['23/87 Chowk, Prayagraj, Uttar Pradesh','879/98/1, Dhobi Ghat, Prayagraj, Uttar Pradesh', '988 Dhobi Ghat, Prayagraj, Uttar Pradesh', '87 dhomanganj, Prayagraj, Uttar Pradesh','23/87 Chowk, Prayagraj, Uttar Pradesh','879/98/1, Civil Lines, Prayagraj, Uttar Pradesh', '988 Alopibagh, Prayagraj, Uttar Pradesh', '87 Zero Road, Prayagraj, Uttar Pradesh'];
+//customer will not be used on this page ...... this data will go to customer_food_delivery_tracking dart
 
   BitmapDescriptor sourceIcon = BitmapDescriptor.defaultMarker;
 
@@ -264,6 +266,9 @@ class _home_screenState extends State<home_screen> {
                                 order_id: order_id[index],
                                 customer_lat: customer_address_latitude[index],
                                 customer_long: customer_address_longitude[index],
+                                customer_image: customer_image[index],
+                                customer_meal: customer_meal[index],
+                              customer_address: customer_address[index],
                             ))) ;
 
                             },
