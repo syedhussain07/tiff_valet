@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart'; //rating bar
-
+import 'package:tiff_valet/home_screen.dart';
 class deliveredFeedback extends StatefulWidget {
   final String customer_name;
   final int order_id;
@@ -224,7 +224,7 @@ class _deliveredFeedbackState extends State<deliveredFeedback> {
             Expanded(
               child: MaterialButton(onPressed: (){
 
-                // Navigator.push(context, MaterialPageRoute(builder: (context)=> deliveredFeedback(
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> home_screen(delivered_customer_name: customer_name)));
                 //   customer_name: customer_name,
                 //   order_id: order_id,
                 //

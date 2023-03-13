@@ -103,7 +103,7 @@ class otp_screen extends StatelessWidget {
                 width: 400,
                 height: 50,
                 child: OutlinedButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => home_screen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) =>home_screen(delivered_customer_name: "")  ));
                 },
                     child:  const Text('Proceed', style: TextStyle(color: Colors.black, fontSize: 20),)) ,
               ),

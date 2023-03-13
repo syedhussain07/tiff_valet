@@ -68,7 +68,7 @@ class _not_deliverableState extends State<not_deliverable> {
                 child: DropdownButton<String>(
                   underline: Container(
                     height: 2,
-                    color: Colors.white,
+                    color: Colors.transparent,
                   ),
                   hint: Text("Please provide a reason for the failed delivery"),
                   value: _selectedReason,
@@ -122,11 +122,12 @@ class _not_deliverableState extends State<not_deliverable> {
                             minHeight: 60.0), // min sizes for Material buttons
                         alignment: Alignment.center,
                         child: Text(
-                          'Set your delivery location',
+                          'Submit',
                           style: TextStyle(color: Colors.white),
                         )),
                   )),
             ),
+
 
 
           ],
