@@ -17,10 +17,7 @@ class deliveredFeedback extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<deliveredFeedback> createState() => _deliveredFeedbackState(
-      this.customer_name,
-      this.order_id,
-      this.customer_image,
+  State<deliveredFeedback> createState() => _deliveredFeedbackState(this.customer_name, this.order_id, this.customer_image,
       this.customer_meal,
       this.customer_address);
 }

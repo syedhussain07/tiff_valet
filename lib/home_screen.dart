@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'customer_food_delivery_tracking.dart';
-
+import 'package:tiff_valet/customNavigationBar.dart';
+import 'package:tiff_valet/enum.dart';
+import 'package:tiff_valet/enum.dart';
 
 class home_screen extends StatefulWidget {
   final String delivered_customer_name;
@@ -70,7 +72,7 @@ class _home_screenState extends State<home_screen> {
     1234567999
   ];
   List<bool> isDelivered=[false,false,false,false,false,false,false,false];
-  int currentPageIndex = 0; //for navigationbar
+  int _selectedIndex = 0;//for navigationbar
 
   List<String> customer_address=['23/87 Chowk, Prayagraj, Uttar Pradesh','879/98/1, Dhobi Ghat, Prayagraj, Uttar Pradesh', '988 Dhobi Ghat, Prayagraj, Uttar Pradesh', '87 dhomanganj, Prayagraj, Uttar Pradesh','23/87 Chowk, Prayagraj, Uttar Pradesh','879/98/1, Civil Lines, Prayagraj, Uttar Pradesh', '988 Alopibagh, Prayagraj, Uttar Pradesh', '87 Zero Road, Prayagraj, Uttar Pradesh'];
 //customer will not be used on this page ...... this data will go to customer_food_delivery_tracking dart
@@ -97,6 +99,12 @@ class _home_screenState extends State<home_screen> {
       }
     }
   }
+// used in bottomNavigation
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   void initState() {
@@ -107,6 +115,7 @@ class _home_screenState extends State<home_screen> {
     super.initState();
   }
 
+
   @override
   Widget build(BuildContext context) {
 
@@ -114,31 +123,29 @@ class _home_screenState extends State<home_screen> {
 
     return Scaffold(
 
-      bottomNavigationBar: NavigationBar(
-        onDestinationSelected: (int index) {
-        setState(() {
-          currentPageIndex = index;
-        });
-      },
+      // bottomNavigationBar: BottomNavigationBar(
+      //     showSelectedLabels: false, //selected item
+      //     showUnselectedLabels: false,
+      //   items: const <BottomNavigationBarItem>[
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home_filled),
+      //       label: 'Home',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.business),
+      //       label: 'Business',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.person),
+      //       label: 'School',
+      //     ),
+      //   ],
+      //   currentIndex: _selectedIndex,
+      //   selectedItemColor: Colors.red,
+      //   onTap: _onItemTapped,
+      // ),
 
-        selectedIndex: currentPageIndex,
-        destinations: [
-          NavigationDestination(
-            icon: Icon(Icons.explore),
-            label: 'Explore',
-          ),NavigationDestination(
-            icon: Icon(Icons.explore),
-            label: 'Explore',
-          ),NavigationDestination(
-            icon: Icon(Icons.explore),
-            label: 'Explore',
-          ),
-
-
-        ],
-
-
-      ),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu:MenuState.home),
       resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xffF5F5F8),
       appBar: AppBar(
