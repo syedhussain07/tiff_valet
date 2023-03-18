@@ -4,7 +4,11 @@ import 'package:tiff_valet/customer_gps.dart';
 import 'package:tiff_valet/home_screen.dart';
 
 class otp_screen extends StatelessWidget {
-  const otp_screen({Key? key}) : super(key: key);
+  final String phoneNumber;
+  final String countryCode;
+
+  otp_screen({required this.phoneNumber,required this.countryCode});
+
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +46,7 @@ class otp_screen extends StatelessWidget {
               SizedBox(
                 height: 100,
               ),
-              Padding(
-                padding: EdgeInsets.only(left: 20),
+              Center(
                 child: Text(
                   'OTP Verification',
                   style: TextStyle(
@@ -52,6 +55,15 @@ class otp_screen extends StatelessWidget {
                       fontSize: 35),
                 ),
               ),
+              SizedBox(
+                height: 15,
+              ),
+
+              Text("Enter the code sent to the number"),
+              SizedBox(
+                height: 5,
+              ),
+              Text(countryCode+" "+phoneNumber),
               SizedBox(
                 height: 30,
               ),
@@ -66,47 +78,62 @@ class otp_screen extends StatelessWidget {
                 onCompleted: (pin) => print(pin),
               ),
               SizedBox(
-                height: 30,
+                height: 20,
               ),
 
               buildTimer(),
 
               //OtpForm(),
-              SizedBox(height: 200),
+              Expanded(child: SizedBox()),
+              Text("Didn't recieve code?"),
+              SizedBox(
+                height: 5,
+              ),
+
               GestureDetector(
                 onTap: () {// OTP code resend
                 },
-                child: Text("Resend OTP Code",
+                child: Text("Resend OTP",
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0,right:20,bottom:10),
+                child: MaterialButton(
+                    onPressed:(){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => home_screen(delivered_customer_name: "delivered_customer_name")));
+                    },
+                    padding: const EdgeInsets.only(right:0.0),
+                    child: Ink(
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Color(0xFF8639B1), Color(0xFFEB2133), Color(0xFFFD9E41)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                      ),
+                      child: Container(
+                          constraints: const BoxConstraints(minWidth: 60.0, minHeight: 60.0), // min sizes for Material buttons
+                          alignment: Alignment.center,
+                          child: Text('Verify',style: TextStyle(color: Colors.white),)
+
+                      ),
+                    )
+                ),
               ),
 
-              Container(
-                width: 400,
-                height: 50,
-                child: OutlinedButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => customer_gps()));
-                },
-                    child:  const Text('Maps', style: TextStyle(color: Colors.black, fontSize: 20),)) ,
-              ),
-              Container(
-                width: 400,
-                height: 50,
-                child: OutlinedButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => customer_gps()));
-                },
-                    child:  const Text('Verify Otp', style: TextStyle(color: Colors.black, fontSize: 20),)) ,
-              ),
-              Container(
-                width: 400,
-                height: 50,
-                child: OutlinedButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>home_screen(delivered_customer_name: "")  ));
-                },
-                    child:  const Text('Proceed', style: TextStyle(color: Colors.black, fontSize: 20),)) ,
-              ),
+              // Container(
+              //   width: 400,
+              //   height: 50,
+              //   child: OutlinedButton(onPressed: (){
+              //     //Navigator.push(context, MaterialPageRoute(builder: (context) => customer_gps()));
+              //   },
+              //       child:  const Text('Verify Otp', style: TextStyle(color: Colors.black, fontSize: 20),)) ,
+              // ),
+              //
 
             ],
           ) ,

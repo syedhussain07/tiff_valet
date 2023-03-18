@@ -1,1 +1,1 @@
-enum MenuState { home, driverProfile, howItWorks, profile }
+enum MenuState { home,customerWeight, driverProfile, valetPerformance}

@@ -3,6 +3,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'customer_food_delivery_tracking.dart';
 import 'package:tiff_valet/customNavigationBar.dart';
 import 'package:tiff_valet/enum.dart';
+import 'package:tiff_valet/navigationDrawerWidget.dart';
 import 'package:tiff_valet/enum.dart';
 
 class home_screen extends StatefulWidget {
@@ -144,6 +145,7 @@ class _home_screenState extends State<home_screen> {
       //   selectedItemColor: Colors.red,
       //   onTap: _onItemTapped,
       // ),
+      drawer: navigationDrawer(),
 
       bottomNavigationBar: CustomBottomNavBar(selectedMenu:MenuState.home),
       resizeToAvoidBottomInset: false,
@@ -224,7 +226,9 @@ class _home_screenState extends State<home_screen> {
                   Expanded(
                       child: Container(
                           decoration: BoxDecoration(
-                            color: _hasBeenPressed1 ? Colors.green : Colors.white,
+                            color: _hasBeenPressed1
+                                ? Colors.green
+                                : Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
@@ -270,7 +274,7 @@ class _home_screenState extends State<home_screen> {
                   Expanded(
                       child: Container(
                           decoration: BoxDecoration(
-                            color: _hasBeenPressed2 ? Colors.green : Colors.white,
+                            color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
@@ -287,9 +291,7 @@ class _home_screenState extends State<home_screen> {
                                   ),
                                   Text("Item Delivered",
                                       style: TextStyle(
-                                        color: _hasBeenPressed2
-                                            ? Colors.white
-                                            : Colors.black,
+                                        color:  Colors.black,
                                       ))
                                 ],
                               ),
@@ -301,7 +303,7 @@ class _home_screenState extends State<home_screen> {
                   Expanded(
                       child: Container(
                           decoration: BoxDecoration(
-                            color: _hasBeenPressed1 ? Colors.green : Colors.white,
+                            color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
@@ -331,8 +333,10 @@ class _home_screenState extends State<home_screen> {
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
+             Divider(),
+
 
 
 
